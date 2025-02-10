@@ -7,6 +7,7 @@ app.use(cors())
 app.use(express.json())
 app.get('/',(req,res)=>{
     res.send('hello all')
+
 })
 
 app.post('/',(req,res)=>{
@@ -18,11 +19,12 @@ app.post('/',(req,res)=>{
     return require.status(400).json({message:'email cannot be empty'})
 
   const length = password.length()
-}
+  if(length<8 || length>16)
+    return require.status(400).json({message:'password length should be greater than 8 or less than 16'})
 
-    catch(e){
-     console.log("message")
+if(dateofbirth)
+    return require.status(200).json({message:'ok'})
     }
-
+  
    
 })
